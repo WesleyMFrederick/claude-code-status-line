@@ -9,7 +9,6 @@ A customizable status line for Claude Code that displays project information, gi
 - **Model Information**: Displays current Claude model (Opus 4.1, Sonnet 4, etc.)
 - **Context Window Tracking**: Shows token usage and percentage (supports 1M context for Sonnet 4)
 - **Relative Path Display**: Shows worktree or subdirectory paths when different from project root
-- **Session Time**: Displays remaining time in current Claude session
 
 ## Project Structure
 
@@ -17,8 +16,7 @@ A customizable status line for Claude Code that displays project information, gi
 claude-code-status-line/
 ├── scripts/
 │   ├── statusline-script.sh       (main status line script)
-│   ├── claude-context-tracker.js  (context window analyzer)
-│   └── claude-session-time.js     (session timer)
+│   └── claude-context-tracker.js  (context window analyzer)
 ├── .gitignore                     (excludes personal config and debug files)
 └── README.md
 ```
@@ -142,7 +140,7 @@ DEBUG=false # Disable debug mode (default)
 ## Requirements
 
 - **Claude Code**: Status line integration
-- **Node.js**: Required for context tracking and session timer
+- **Node.js**: Required for context tracking
 - **jq**: JSON parsing (usually pre-installed on most systems)
 - **Git**: Repository information detection
 

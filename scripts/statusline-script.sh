@@ -171,6 +171,14 @@ if [[ -d "$current_dir/.git" ]] || git -C "$current_dir" rev-parse --git-dir >/d
     fi
 fi
 
+# Check for uncommitted changes (dirty state)
+dirty=""
+if [[ -n "$branch" ]]; then
+    if ! git -C "$current_dir" diff --quiet 2>/dev/null || ! git -C "$current_dir" diff --cached --quiet 2>/dev/null; then
+        dirty="*"
+    fi
+fi
+
 # Build path display
 path_display=""
 if [[ -n "$current_dir" ]]; then
@@ -240,7 +248,7 @@ fi
 
 # Add branch if available
 if [[ -n "$branch" ]]; then
-    final_output="$final_output ($branch)"
+    final_output="$final_output ($branch$dirty)"
 fi
 
 # Add separator and model
