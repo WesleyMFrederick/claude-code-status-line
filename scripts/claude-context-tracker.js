@@ -6,6 +6,7 @@ const path = require('path');
 // Standard Claude context window limits (in tokens)
 const CONTEXT_LIMITS = {
   'claude-sonnet-4-5-20250929': 1000000,
+  'claude-haiku-4-5-20250929': 1000000,
   'claude-sonnet-4-20250514': 1000000,
   'claude-opus-4-1-20250805': 200000,
   'claude-haiku-4-20250514': 200000,
